@@ -1,0 +1,17 @@
+<svg width="1600" height="360" viewBox="0 0 1600 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#202A35"/><stop offset=".55" stop-color="#45515A"/><stop offset="1" stop-color="#12191F"/></linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#30383A"/><stop offset="1" stop-color="#11181A"/></linearGradient>
+    <linearGradient id="fog" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#B9C3BF" stop-opacity=".16"/><stop offset="1" stop-color="#B9C3BF" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1600" height="360" fill="url(#sky)"/>
+  <path d="M0 191L180 55l104 87L429 17l164 157L760 25l165 147L1108 54l140 134 158-77 194 119v130H0V191Z" fill="#1B242D"/>
+  <path d="m0 205 189-96 124 74 132-82 162 86 167-104 153 89 176-101 127 83 160-56 170 116v129H0V205Z" fill="#626B6E" fill-opacity=".38"/>
+  <path d="M0 240h1600v120H0V240Z" fill="url(#wall)"/>
+  <path d="M0 235h1600" stroke="#9A9E95" stroke-opacity=".3" stroke-width="4"/>
+  <g fill="#151B1D"><path d="M90 216h10v-46h4v46h8v-61h6v61h8v-30h5v30h12v-77h7v77h14v-40h7v40h13v-57h7v57h12v-24h5v24h10v-49h5v49h18v-31h5v31h30v-48h7v48h20v-25h5v25h28v-64h7v64h23v-29h5v29h31v-55h8v55h20v-39h6v39h24v-53h7v53h24v-32h6v32h28v-60h8v60h22v-41h7v41h29v-27h5v27h32v-54h7v54h35v-72h8v72h40v-43h6v43h38v-61h7v61h35v-38h6v38h45v-55h7v55h28v-69h8v69h40v-42h6v42h45v-58h7v58h42v-37h6v37h38v-53h7v53h44v-35h6v35h37v-61h8v61h42v-40h7v40h45v-54h7v54h38v-31h6v31h42v-43h7v43h38v-69h8v69h49v-49h7v49h35v-59h7v59h49v-41h7v41h48v-48h7v48h24v25H90v-25Z"/></g>
+  <path d="M1180 262c67-46 132-64 196-42 40 14 82 39 104 88h-300v-46Z" fill="#080D10"/>
+  <path d="M1280 238c23-28 62-36 84-6l-11 42h-83l10-36Z" fill="#11171A"/><path d="m1328 219 19-34 14 39" stroke="#9D9A89" stroke-opacity=".35" stroke-width="3"/>
+  <path d="M0 286h1600v74H0v-74Z" fill="url(#fog)"/>
+  <g stroke="#D7B49E" stroke-opacity=".38" stroke-width="2"><path d="M1450 0v92M1430 18h40M1408 47h84M1386 78h128"/><path d="M1500 0v80M1478 15h44M1457 45h86"/></g>
+</svg>
