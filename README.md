@@ -1,43 +1,189 @@
-# KAIZEN 改善 — Forge Your Progress
+# 改善 KAIZEN
 
-A subtle anime-inspired, responsive weekly Kanban application built with Next.js 15 and TypeScript.
+### Forge Your Progress.
+
+**A personal productivity workspace for planning, tracking, and improving — one task, one week, one step at a time.**
+
+[**Launch KAIZEN →**](https://kaizen-henna.vercel.app/login)
+
+---
+
+## About KAIZEN
+
+**KAIZEN (改善)** is inspired by the Japanese philosophy of continuous improvement — the belief that meaningful progress comes from small, consistent actions.
+
+Built as a modern, cloud-connected productivity application, KAIZEN brings together weekly planning, Kanban task management, and personal organization in a single workspace.
+
+Its visual identity combines a dark, minimalist interface with Japanese-inspired design elements, including the red spider lily (_Higanbana_).
+
+**Plan with intention. Execute with focus. Improve continuously.**
 
 ## Features
-- Five Kanban lanes, drag tasks between lanes (desktop HTML5 drag and drop)
-- Weekly navigation, planning, search, categories, priorities, due dates and subtasks
-- Dashboard, All Tasks, Weekly Planner, category manager
-- Private Supabase cloud persistence and JSON import/export
-- Original red spider lily SVG artwork and restrained Japanese-inspired ornamentation
 
-## Run locally
+### Kanban Task Management
 
-Use Node.js 22, then:
+Organize your work through five stages:
+
+`Backlog → To Do → In Progress → Review → Completed`
+
+- Create, edit, and delete tasks.
+- Move tasks between workflow stages.
+- Set priorities and due dates.
+- Organize tasks by category.
+- Track progress using subtasks.
+
+### Weekly Planning
+
+Turn long-term goals into manageable weekly actions.
+
+- Organize tasks by planned week.
+- Navigate between weeks.
+- Monitor current priorities.
+- Keep unfinished work visible.
+
+### Personal Workspace
+
+KAIZEN is designed for individual productivity with cloud-based accounts.
+
+- Email-based registration and login.
+- Private, account-specific task data.
+- Supabase-backed storage.
+- Access your workspace across devices.
+
+### Productivity Tools
+
+- Task search and filtering.
+- Category management.
+- Task progress tracking.
+- JSON backup import and export.
+- Responsive layouts and scrollable Kanban boards.
+
+### Visual Experience
+
+KAIZEN features a dark, cinematic visual language inspired by Japanese storytelling and the concept of perseverance.
+
+The red spider lily serves as a recurring visual motif, complemented by restrained typography, deep crimson accents, and a distraction-conscious interface.
+
+---
+
+## Technology Stack
+
+| Layer           | Technology                    |
+| --------------- | ----------------------------- |
+| Framework       | Next.js 15                    |
+| Language        | TypeScript                    |
+| Frontend        | React                         |
+| Authentication  | Supabase Auth                 |
+| Database        | Supabase PostgreSQL           |
+| Data Security   | PostgreSQL Row Level Security |
+| Icons           | Lucide React                  |
+| Hosting         | Vercel                        |
+| Version Control | Git & GitHub                  |
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm
+- A Supabase project
+- Git
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/SumithaDevHub/kaizen.git
+cd kaizen
+```
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Create a `.env.local` file in the project root:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+```
+
+The application requires a compatible Supabase database schema, authentication configuration, and Row Level Security policies.
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Deployment preparation
+### Production Build
 
-See [Vercel deployment instructions](docs/vercel-deployment.md). No deployment or Git push has been performed. The live Supabase checks in that document must pass before public launch.
+```bash
+npm run build
+npm run start
+```
 
-## Storage — important
+## Application Architecture
 
-Tasks, categories, and subtasks are stored in Supabase for the authenticated user. Keep RLS enabled on all user-owned tables. The app uses `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in `.env.local`; never use a service-role key in the browser.
+```text
+KAIZEN
+│
+├── Authentication
+│   ├── Login / Signup
+│   └── Password Recovery
+│
+├── Productivity Workspace
+│   ├── Dashboard
+│   ├── Kanban Board
+│   ├── Weekly Planning
+│   ├── Tasks & Subtasks
+│   └── Categories
+│
+├── Data Management
+│   ├── Supabase PostgreSQL
+│   ├── User-Based Access Control
+│   └── JSON Backup / Import
+│
+└── Deployment
+    └── Vercel
+```
 
-Settings → Import Browser Tasks reads legacy localStorage only after an explicit import action and confirmation. Browser storage has no reliable owner information, so import only your own backups. Imports preserve existing tasks, generate new IDs, and validate the backup before writing. Export backup remains available. Logout ends the current browser session without deleting tasks or backups.
+## Data Privacy
 
-Import IDs are deterministic and scoped to the signed-in user. Retrying the same backup resumes missing writes using insert-only conflict handling, preserving edits to records already in the cloud. Loads are paginated so large boards and backups are not silently truncated. Task deletion relies on the database's `subtasks.task_id → tasks.id ON DELETE CASCADE` relationship; a blocked deletion preserves all records.
+KAIZEN uses Supabase Authentication and PostgreSQL Row Level Security to support user-specific workspaces.
 
-In Supabase Auth URL Configuration, allow your application origins and `/auth/confirm` and `/reset-password` redirect URLs. Default PKCE confirmation links and custom `token_hash` links are supported. For custom email templates, send recovery token hashes to `/auth/confirm?token_hash=…&type=recovery`; signup links use `type=email` or `type=signup`.
+Tasks, categories, and subtasks are associated with individual accounts. The database includes ownership constraints and cascading subtask deletion.
 
-The repository does not contain database policy definitions. Verify deployed RLS with two separate test users: neither should be able to select, update, or delete the other's profiles, tasks, categories, or subtasks. Insert/update policies must also prevent linking tasks to another user's categories and subtasks to another user's tasks. Application filters supplement RLS; they do not replace it.
+Production privacy and account-recovery flows should be validated before wider public use.
 
-See [the manual verification plan](docs/manual-testing.md) and [read-only database audit](docs/supabase-audit.sql). Run local checks with `npm test`, `npm run typecheck`, and `npm run build`.
+## Project Status
 
-## Design
+**Version 1 — Deployed**
 
-Original Higanbana (red spider lily) SVG line drawings are used for the hero, sidebar, authentication backdrop, and small selected accents. The active UI uses no anime frames, characters, official logos, or third-party image assets. Archived earlier artwork remains in `public` but is not referenced by the active UI. Google Fonts have system fallbacks; core layout and controls do not depend on font downloads.
+The initial release focuses on essential task management, weekly planning, cloud persistence, and a consistent user experience.
+
+Future enhancements may include productivity analytics, advanced planning tools, additional personalization, and improved mobile interactions.
+
+## Design Philosophy
+
+KAIZEN is built around three principles:
+
+**Clarity** — Keep priorities visible and workflows understandable.
+
+**Consistency** — Encourage meaningful progress through manageable daily and weekly actions.
+
+**Improvement** — Make it easier to reflect, adapt, and move forward.
+
+---
+
+### 改善 — KAIZEN
+
+_Small steps. Relentless progress._
+
+**[Open KAIZEN](https://kaizen-henna.vercel.app/login)**
+
+Built with Next.js, TypeScript, and Supabase.
