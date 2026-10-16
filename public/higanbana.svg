@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 820" fill="none">
+  <!-- Original KAIZEN botanical drawing: recurved petals and fine stamens. -->
+  <defs>
+    <linearGradient id="stem" x2="0" y2="1"><stop stop-color="#737568"/><stop offset="1" stop-color="#303733" stop-opacity=".15"/></linearGradient>
+    <linearGradient id="red"><stop stop-color="#691c2d"/><stop offset=".6" stop-color="#ad3c4a"/><stop offset="1" stop-color="#d07470"/></linearGradient>
+    <g id="flower">
+      <g stroke="url(#red)" stroke-linecap="round">
+        <g id="spray">
+          <path d="M0 0C-16-17-24-44-12-56C-5-63 4-55 0-48C-4-55-12-51-10-41C-8-25 4-16 0 0Z" fill="#8d2b3c" stroke-width="1.2"/>
+          <path d="M0 0C-20-25-43-37-42-67M0 0C-26-14-58-12-65-38M0 0C-10-34-13-56-2-76" stroke-width="1.3"/>
+          <g fill="#d27771" stroke="none"><ellipse cx="-42" cy="-67" rx="2.8" ry="1.6" transform="rotate(-25 -42 -67)"/><ellipse cx="-65" cy="-38" rx="2.8" ry="1.6"/><ellipse cx="-2" cy="-76" rx="2.8" ry="1.6" transform="rotate(-45 -2 -76)"/></g>
+        </g>
+        <use href="#spray" transform="rotate(60)"/><use href="#spray" transform="rotate(120)"/><use href="#spray" transform="rotate(180)"/><use href="#spray" transform="rotate(240)"/><use href="#spray" transform="rotate(300)"/>
+      </g>
+      <circle r="4" fill="#bb5a5d"/>
+    </g>
+  </defs>
+  <g stroke="url(#stem)" stroke-width="2.4" stroke-linecap="round">
+    <path d="M302 805C304 634 280 478 283 301"/>
+    <path d="M362 820C370 662 411 460 403 198"/>
+    <path d="M267 805C265 692 203 574 187 444"/>
+    <path d="M390 810C389 722 456 594 481 502"/>
+    <path d="M328 795C324 651 335 550 332 443"/>
+  </g>
+  <g opacity=".48"><use href="#flower" transform="translate(481 502) rotate(23) scale(.66)"/><use href="#flower" transform="translate(332 443) rotate(-12) scale(.62)"/></g>
+  <use href="#flower" transform="translate(187 444) rotate(-18) scale(.85)"/>
+  <use href="#flower" transform="translate(283 301) rotate(8) scale(1.02)"/>
+  <use href="#flower" transform="translate(403 198) rotate(-8) scale(.9)"/>
+</svg>

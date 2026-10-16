@@ -16,3 +16,147 @@ footer{background-image:url('/wave-ornament.svg');background-repeat:no-repeat;ba
 .task-card{box-shadow:inset 0 1px 0 #ffffff08,0 4px 12px #0003}
 @media(max-width:1100px){.main{margin-left:195px}.toolbar{top:186px}.filters{top:281px}}
 @media(max-width:700px){.main{margin-left:0}.toolbar,.filters{position:static}.hero{position:relative}.board-scroll{background-size:560px auto}.sidebar{width:238px}}
+
+/* KAIZEN — Authentication */
+
+.kaizen-auth {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+  background:
+    radial-gradient(ellipse at 70% 15%, #563b5540, transparent 55%),
+    linear-gradient(160deg, #171c23, #0b1016 75%);
+  color: #eee5d6;
+  font-family: inherit;
+}
+
+.kaizen-auth-panel {
+  width: min(100%, 440px);
+  text-align: center;
+}
+
+.kaizen-auth-brand {
+  margin-bottom: 36px;
+}
+
+.kaizen-auth-mark {
+  display: block;
+  font-size: 38px;
+  color: #c6a477;
+  letter-spacing: 8px;
+  margin-bottom: 12px;
+}
+
+.kaizen-auth-brand h1 {
+  font-family: Georgia, serif;
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 9px;
+}
+
+.kaizen-auth-brand p,
+.kaizen-auth-eyebrow,
+.kaizen-auth-footer {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #b79b78;
+}
+
+.kaizen-auth-card {
+  padding: 36px;
+  text-align: left;
+  background: #20242c;
+  border: 1px solid #655445;
+  border-radius: 12px;
+  box-shadow: 0 24px 80px #0007;
+}
+
+.kaizen-auth-card h2 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  margin: 16px 0 8px;
+  font-weight: 500;
+}
+
+.kaizen-auth-subtitle {
+  color: #a9a5a3;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.kaizen-auth-card label {
+  display: block;
+  font-size: 12px;
+  color: #d3c6b8;
+  margin: 18px 0 8px;
+}
+
+.kaizen-auth-card input {
+  display: block;
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #494951;
+  border-radius: 6px;
+  background: #151a21;
+  color: #f3e9dc;
+  outline: none;
+}
+
+.kaizen-auth-card input:focus {
+  border-color: #b78d68;
+}
+
+.kaizen-auth-card form button {
+  width: 100%;
+  margin-top: 26px;
+  padding: 14px;
+  background: #8c393a;
+  color: #fff4e7;
+  border: 1px solid #b65b52;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+}
+
+.kaizen-auth-card form button:hover {
+  background: #a44747;
+}
+
+.kaizen-auth-card form button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.kaizen-auth-switch {
+  display: block;
+  margin: 22px auto 0;
+  color: #c6a477;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.kaizen-auth-message {
+  margin-top: 18px;
+  color: #dfc293;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.kaizen-auth-footer {
+  margin-top: 34px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .kaizen-auth-card {
+    padding: 26px 20px;
+  }
+
+  .kaizen-auth-brand h1 {
+    font-size: 38px;
+  }
+}
